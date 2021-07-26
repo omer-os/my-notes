@@ -2,11 +2,11 @@
 
 
 > A local branch is a branch that only you (the local user) can see. It exists only on your local machine
-> the remote branch is the code that exist in a web server like github .
+> the remote branch is the code that exists in a web server like github .
 
 ~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~
 
-### createing a new repo in github 
+### creating a new repo in github 
 
 * first create a new folder in you device and go into it
 ```
@@ -21,7 +21,7 @@ git init
 
 * write your code inside this folder , lets say we created index.html
 ```
-index.html
+in index.html :
 
 <div>hello world</div>
 
@@ -52,9 +52,11 @@ git add .
 git commit -m "commit massege bla bla bla"
 git push
 ```
+
+
 ~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~
 
-### createing a new branch
+### creating a new branch
 
 * to create a new branch beside your main producion branch run ... 
 ```
@@ -76,7 +78,8 @@ git checkout the-name-of-branch
 git merge the-name-of-test-branch-that-you-want-to-get-changes-from
 ```
 
-### what if your frind made changes into main branch in remote repo in github ?
+### what if your friend made changes into main branch in remote repo in github ?
+
 
 * you have to get changes from github into your local branch first , how ? just run
 ```
