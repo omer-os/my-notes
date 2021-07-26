@@ -4,9 +4,12 @@
 > A local branch is a branch that only you (the local user) can see. It exists only on your local machine
 > the remote branch is the code that exists in a web server like github .
 
-~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~
 
-### creating a new repo in github 
+
+
+
+
+### creating a new repo in github `#f03c15`
 
 * first create a new folder in you device and go into it
 ```
