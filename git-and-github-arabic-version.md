@@ -26,14 +26,14 @@
 
 > نعمل مشروع جديد في كيتهوب
 
-![new repo](images/githubnewrepo.png)
+![new repo](https://github.com/omer-os/my-notes/blob/master/images/githubnewrepo.PNG)
 
 
 
 
 > بعد ما نملي المعلومات المطلوبة للمشروع نضغط على 
 
-![create](images/create.png)
+![create](https://github.com/omer-os/my-notes/blob/master/images/create.PNG)
 
 
 
