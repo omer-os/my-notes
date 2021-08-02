@@ -12,11 +12,11 @@
 
 
 > نفتح تيرمنال في الفولدر الي سويناه
-![cap](images.cap.png)
+![cap](images/Cap.png)
 
 
 > نعمل مشروع جديد في كيتهوب
-![new repo](images/githubnewrepo)
+![new repo](images/githubnewrepo.png)
 
 
 > بعد ما نملي المعلومات المطلوبة للمشروع نضغط على 
