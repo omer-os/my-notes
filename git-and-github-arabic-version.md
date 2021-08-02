@@ -4,7 +4,7 @@
 
 
 > نعمل فولدر بجهازنا 
-![folder](images/folder.png)
+![folder](https://github.com/omer-os/my-notes/blob/master/images/folder.PNG)
 
 
 > كل الاكواد الي راح نكتبها راح يكون في داخل هذا الفولدر
