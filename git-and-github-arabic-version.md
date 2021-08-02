@@ -4,31 +4,31 @@
 
 
 > نعمل فولدر بجهازنا 
-![folder](/images/folder.png)
+![folder](images/folder.png)
 
 
 > كل الاكواد الي راح نكتبها راح يكون في داخل هذا الفولدر
-![app](/images/app.png)
+![app](images/app.png)
 
 
 > نفتح تيرمنال في الفولدر الي سويناه
-![cap](/images.cap.png)
+![cap](images.cap.png)
 
 
 > نعمل مشروع جديد في كيتهوب
-![new repo](/images/githubnewrepo)
+![new repo](images/githubnewrepo)
 
 
 > بعد ما نملي المعلومات المطلوبة للمشروع نضغط على 
-![create](/images/create.png)
+![create](images/create.png)
 
 
 > ننسخ هاي الكومندات
-![commands](/images/commands.png)
+![commands](images/commands.png)
 
 
 > و نلصقها في داخل التيرمنال
-![l1](/images/l1.png)
+![l1](images/l1.png)
 
 > بعد ما نضغط انتر مرتين مشروعنا راح ينربط مع كيتهوب
 
