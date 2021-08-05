@@ -71,7 +71,7 @@ def login():
         email = request.form["email"]
         session["name"] = name
         session["email"] = email
-        session.permanent_session_lifetime = True
+        session.permanent = True
         
         return redirect(url_for('sginin'))
     
@@ -96,4 +96,41 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+```
+
+
+
+
+
+
+## flash messages in flask app
+``` python
+
+# this is logout function from the last example
+
+def logout():
+    session.pop("name", None)
+    return redirect(url_for("login"))
+
+# lets add a flash message when the user logges out
+
+from flask import flash
+def logout():
+    session.pop("name", None)
+    if 'email' in session:
+        email = session["email"]
+        flash(f"logged out from {email}.", "info")
+
+    return redirect(url_for("login"))
+```
+
+``` html
+<!-- we have to show the flash message in base.html -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for i in messages %}
+            <h1>{{i}}</h1>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 ```
