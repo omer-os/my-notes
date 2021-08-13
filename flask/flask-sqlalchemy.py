@@ -1,62 +1,84 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
-
-# importing 
+from datetime import timedelta
+from flask import Flask
+from flask.globals import request, session
+from flask.helpers import url_for
+from flask.templating import render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.engine import url
+from werkzeug.utils import redirect
+
 
 app = Flask(__name__)
+app.secret_key = 'ofeoni3pomoimrg'
+app.permanent_session_lifetime = timedelta(days=10)
 
-# adding database location
-app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
+app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Articles.sqlite3'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-#createing database
 db = SQLAlchemy(app)
-class students(db.Model):
-    # id is the id of each column , primary_key means that each column should have different id from each other
 
-   id = db.Column('student_id', db.Integer, primary_key = True)
-   name = db.Column(db.String(100))
-   city = db.Column(db.String(50))  
-   addr = db.Column(db.String(200))
+class Articles(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    Title = db.Column(db.String(100))
+    Body = db.Column(db.String(100))
 
-def __init__(self, name, city, addr,):
-   self.name = name
-   self.city = city
-   self.addr = addr
-
-
+    def __init__(self, Title, Body):
+        self.Title = Title
+        self.Body = Body
 
 
 
 
 
 @app.route('/')
-def index():
-    # passing data to html page 
-    return render_template('index.html', students=students.query.all())
+def home():
+    return redirect(url_for('articles'))
 
 
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    if request.method=="POST":
+        app.permanent = True
 
-# add new element
-@app.route('/new', methods = ['GET', 'POST'])
-def new():
-   if request.method == 'POST':
-      if not request.form['name'] or not request.form['city'] or not request.form['addr']:
-         flash('Please enter all the fields', 'error')
-      else:
-         student = students(request.form['name'], request.form['city'],
-            request.form['addr'], request.form['pin'])
-         
-         db.session.add(student)
-         db.session.commit()
-         
-         flash('Record was successfully added')
-         return redirect(url_for('show_all'))
-   return render_template('new.html')
+        session["name"] = request.form["name"]
+        session["password"] = request.form["password"]
+
+        return redirect(url_for('articles'))
+    
+    if "name" in session:
+        return redirect(url_for('articles'))
+
+    return render_template('login.html')
 
 
 
 
-if __name__=='__main__':
-   db.create_all()
-   # dadabase created
-   app.run(debug=True)
+
+
+@app.route('/articles', methods = ['GET', 'POST'])
+def articles():
+    
+    if "name" in session:
+        if request.method=="POST":
+            new_article = Articles(request.form["Title"], request.form["Body"])
+
+            db.session.add(new_article)
+            db.session.commit()
+            return render_template('articles.html', Arts=Articles.query.all())
+
+        return render_template('articles.html', Arts=Articles.query.all())
+
+    
+    return redirect(url_for('login'))
+
+
+@app.route('/logout')
+def logout():
+    session.pop("name", None)
+
+    return redirect(url_for('login'))
+
+
+if __name__=="__main__":
+    db.create_all()
+    app.run(debug=True)
