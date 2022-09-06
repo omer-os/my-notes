@@ -1,7 +1,16 @@
 # react libraries that i use
 
-* react-spinners > for creating loading animations very easily 
-* react-slick > for responsive slick animations
-* https://mui.com
-* https://rsuitejs.com/
-* tiltjs https://gijsroge.github.io/tilt.js/ > for card hover animation
+
+## Styling libraries
+| **num** 	| **library name** 	| **link**              	|
+|:-------:	|------------------	|-----------------------	|
+|    1    	| material-ui      	| https://mui.com       	|
+|    2    	| muse-ui          	| https://muse-ui.org/  	|
+|    3    	| react-suite      	| https://rsuitejs.com/ 	|
+
+----------
+
+| **num** 	| **library name** 	| **link**                            	| **uses**                   	|
+|:-------:	|------------------	|-------------------------------------	|----------------------------	|
+|    1    	| tiltjs           	| https://gijsroge.github.io/tilt.js/ 	| 3d card hover animation    	|
+|    2    	| react-slick      	| https://react-slick.neostack.com/   	| image scroll left or right 	|
